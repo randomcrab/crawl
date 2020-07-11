@@ -952,20 +952,6 @@ void player_reacts()
     if (you.unrand_reacts.any())
         unrand_reacts();
 
-    // Handle sound-dependent effects that are silenced
-    if (silenced(you.pos()))
-    {
-        if (you.duration[DUR_SONG_OF_SLAYING])
-        {
-            mpr("The silence causes your song to end.");
-            _decrement_a_duration(DUR_SONG_OF_SLAYING, you.duration[DUR_SONG_OF_SLAYING]);
-        }
-    }
-
-    // Singing makes a continuous noise
-    if (you.duration[DUR_SONG_OF_SLAYING])
-        noisy(spell_effect_noise(SPELL_SONG_OF_SLAYING), you.pos());
-
     if (x_chance_in_y(you.time_taken, 10 * BASELINE_DELAY))
     {
         const int teleportitis_level = player_teleport();

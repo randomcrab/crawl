@@ -47,7 +47,7 @@ infusion INFUSION
 invisibility INVISIBILITY
 mass_confusion MASS_CONFUSION
 slow SLOW
-song_of_slaying SONG_OF_SLAYING
+song_of_slaying WEREBLOOD
 spectral_weapon SPECTRAL_WEAPON
 tukimas_dance TUKIMAS_DANCE
 violent_unravelling VIOLENT_UNRAVELLING
