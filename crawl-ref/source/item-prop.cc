@@ -1955,7 +1955,8 @@ bool item_skills(const item_def &item, set<skill_type> &skills)
     // Jewellery with evokable abilities, wands and similar unwielded
     // evokers allow training.
     if (item_is_evokable(item, false, false, false, true)
-        || item.base_type == OBJ_JEWELLERY && gives_ability(item))
+        || item.base_type == OBJ_JEWELLERY
+           && (gives_ability(item) || item.sub_type == AMU_FLAMES))
     {
         skills.insert(SK_EVOCATIONS);
     }

@@ -13,6 +13,15 @@ attention makes it easier to please your god, but your god will also take more
 notice of your transgressions. The amulet will drain some of your divine favour
 when removed.
 %%%%
+amulet of flames
+
+A pendant containing a captured fire elemental. The elemental surrounds the
+wearer with a mobile ring of searing flame, and keeps other fire clouds away
+from the wearer. The strength of the ring of flames scales with the wearer's
+evocations skill. This amulet attunes the caster to the forces of fire,
+increasing the power of their fire magic and giving protection from fire.
+However, it also makes them much more susceptible to cold.
+%%%%
 amulet of guardian spirit
 
 An amulet containing a protective spirit which will cause any damage taken to

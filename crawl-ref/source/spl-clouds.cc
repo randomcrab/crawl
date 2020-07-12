@@ -238,7 +238,7 @@ void big_cloud(cloud_type cl_type, const actor *agent,
 
 void manage_fire_shield()
 {
-    ASSERT(you.duration[DUR_FIRE_SHIELD]);
+    ASSERT(you.wearing(EQ_AMULET, AMU_FLAMES));
 
     // Melt ice armour entirely.
     maybe_melt_player_enchantments(BEAM_FIRE, 100);
@@ -249,8 +249,8 @@ void manage_fire_shield()
 
     // Place fire clouds all around you
     for (adjacent_iterator ai(you.pos()); ai; ++ai)
-        if (!cell_is_solid(*ai) && !cloud_at(*ai))
-            place_cloud(CLOUD_FIRE, *ai, 1 + random2(6), &you);
+        if (!cell_is_solid(*ai) && !cloud_at(*ai) && x_chance_in_y(you.skill(SK_EVOCATIONS), 27))
+            place_cloud(CLOUD_FIRE, *ai, 1 + random2(3), &you);
 }
 
 spret cast_corpse_rot(bool fail)
