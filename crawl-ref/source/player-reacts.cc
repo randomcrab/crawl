@@ -65,6 +65,7 @@
 #include "mon-tentacle.h"
 #include "mon-util.h"
 #include "mutation.h"
+#include "nearby-danger.h"
 #include "ouch.h"
 #include "player.h"
 #include "player-stats.h"
@@ -929,6 +930,18 @@ static void _regenerate_hp_and_mp(int delay)
     _update_mana_regen_amulet_attunement();
 }
 
+void _handle_spectral_brand()
+{
+    const int pow = you.skill(SK_EVOCATIONS, 4);
+    if (you.damage_brand() == SPWPN_SPECTRAL
+        && you.skill(SK_EVOCATIONS) > 0
+        && !find_spectral_weapon(&you)
+        && there_are_monsters_nearby(true, true, false))
+    {
+        cast_spectral_weapon(&you, pow, you.religion);
+    }
+}
+
 void player_reacts()
 {
     //XXX: does this _need_ to be calculated up here?
@@ -944,6 +957,8 @@ void player_reacts()
 
     if (you.unrand_reacts.any())
         unrand_reacts();
+
+    _handle_spectral_brand();
 
     if (x_chance_in_y(you.time_taken, 10 * BASELINE_DELAY))
     {
