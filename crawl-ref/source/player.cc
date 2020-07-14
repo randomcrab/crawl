@@ -1265,9 +1265,6 @@ int player_res_fire(bool calc_unid, bool temp, bool items)
         if (you.duration[DUR_RESISTANCE])
             rf++;
 
-        if (you.wearing(EQ_AMULET, AMU_FLAMES))
-            rf += 2;
-
         if (you.duration[DUR_QAZLAL_FIRE_RES])
             rf++;
 
@@ -1315,9 +1312,6 @@ int player_res_cold(bool calc_unid, bool temp, bool items)
     {
         if (you.duration[DUR_RESISTANCE])
             rc++;
-
-        if (you.wearing(EQ_AMULET, AMU_FLAMES))
-            rc -= 2;
 
         if (you.duration[DUR_QAZLAL_COLD_RES])
             rc++;
@@ -1605,7 +1599,7 @@ int player_spec_fire()
     // rings of fire:
     sf += you.wearing(EQ_RINGS, RING_FIRE);
 
-    if (you.wearing(EQ_AMULET, AMU_FLAMES))
+    if (player_equip_unrand(UNRAND_SALAMANDER))
         sf++;
 
     if (player_equip_unrand(UNRAND_ELEMENTAL_STAFF))

@@ -613,7 +613,6 @@ unsigned int item_value(item_def item, bool ident)
                 case AMU_MANA_REGENERATION:
                 case AMU_ACROBAT:
                 case AMU_REFLECTION:
-                case AMU_FLAMES:
                     valued += 300;
                     break;
 

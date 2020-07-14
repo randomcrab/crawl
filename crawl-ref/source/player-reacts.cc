@@ -416,9 +416,6 @@ void player_reacts_to_monsters()
     if (!you_are_delayed())
         update_can_currently_train();
 
-    if (you.wearing(EQ_AMULET, AMU_FLAMES))
-        manage_fire_shield();
-
     check_monster_detect();
 
     if (have_passive(passive_t::detect_items) || you.has_mutation(MUT_JELLY_GROWTH)

@@ -1282,11 +1282,6 @@ static void _equip_jewellery_effect(item_def &item, bool unmeld,
     case AMU_GUARDIAN_SPIRIT:
         _spirit_shield_message(unmeld);
         break;
-
-    case AMU_FLAMES:
-        mpr("The air around you leaps into flame!");
-        manage_fire_shield();
-        break;
     }
 
     bool new_ident = false;
@@ -1417,9 +1412,6 @@ static void _unequip_jewellery_effect(item_def &item, bool mesg, bool meld,
         if (you.species == SP_DEEP_DWARF && player_regenerates_mp())
             mpr("Your magic begins regenerating once more.");
         break;
-
-    case AMU_FLAMES:
-        mpr("Your ring of flames gutters out.");
     }
 
     if (is_artefact(item))

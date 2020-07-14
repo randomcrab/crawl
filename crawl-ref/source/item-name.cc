@@ -774,7 +774,6 @@ const char* jewellery_effect_name(int jeweltype, bool terse)
         case AMU_FAITH:             return "faith";
         case AMU_REFLECTION:        return "reflection";
         case AMU_REGENERATION:      return "regeneration";
-        case AMU_FLAMES:            return "flames";
         default: return "buggy jewellery";
         }
     }
